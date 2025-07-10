@@ -2,7 +2,9 @@
 * [English](README.md)
 * [한국어(Korean)](README_ko.md)
 
-작업 환경: Ubuntu 20.04, ROS 2 Foxy
+* 작업 환경
+  * Ubuntu 20.04, ROS 2 Foxy
+  * Ubuntu 22.04, ROS 2 Humble
 
 ### 1. 의존성 설치
 ```bash
@@ -84,6 +86,18 @@ can                    24576  2 can_raw,can_bcm
 sudo modprobe can
 sudo modprobe kvaser_usb
 ```
+
+> [!NOTE]
+>
+> Ubuntu 22.04에서는 아래와 같이 뜰 수 있다.
+>
+> ```bash
+> $ lsmod | grep -e "can" -e "kvaser_usb"
+> 
+> can                    24576  0
+> kvaser_usb             73728  0
+> can_dev                53248  1 kvaser_usb
+> ```
 
 ![PWR에만 불이 들어오고, CAN 1에는 불이 들어오지 않는 모습](/doc/20250709_092809.jpg)
 

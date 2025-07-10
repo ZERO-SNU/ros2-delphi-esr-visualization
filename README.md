@@ -2,7 +2,9 @@
 * [English](README.md)
 * [한국어(Korean)](README_ko.md)
 
-Working environment: Ubuntu 20.04 & ROS 2 Foxy
+* Working environment:
+  * Ubuntu 20.04 & ROS 2 Foxy
+  * Ubuntu 22.04 & ROS 2 Humble
 
 ### 1. Install Dependencies
 ```bash
@@ -84,6 +86,18 @@ If it does not appear as above, manually load the kernel module through `modprob
 sudo modprobe can
 sudo modprobe kvaser_usb
 ```
+
+> [!NOTE]
+>
+> In Ubuntu 22.04, it can be showed as below.
+>
+> ```bash
+> $ lsmod | grep -e "can" -e "kvaser_usb"
+> 
+> can                    24576  0
+> kvaser_usb             73728  0
+> can_dev                53248  1 kvaser_usb
+> ```
 
 ![Only 'PWR' is lit, 'CAN 1' is not lit.](/doc/20250709_092809.jpg)
 
