@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="frame_id" default="radar_1" />
+  <arg name="esr_upside_down" default="false" />
+  
+  <arg name="use_kvaser" default="false" />
+  <arg name="kvaser_hardware_id" default="10000" />
+  <arg name="kvaser_circuit_id" default="0" />
+
+  <arg name="use_socketcan" default="true" />
+  <arg name="socketcan_device" default="can0" />
+
+  <!-- Original 'delphi_ear_can_launch.xml': both 0.01 -->
+  <arg name="marker_duration" default="0.16" />
+  <arg name="marker_duration_velocity" default="5.0" />
+
+  <include file="$(find-pkg-share delphi_esr)/launch/delphi_esr_can.launch.xml"> 
+    <arg name="frame_id" value="$(var frame_id)" />
+    <arg name="esr_upside_down" value="$(var esr_upside_down)" />
+    
+    <arg name="use_kvaser" value="$(var use_kvaser)" />
+    <arg name="kvaser_hardware_id" value="$(var kvaser_hardware_id)" />
+    <arg name="kvaser_circuit_id" value="$(var kvaser_circuit_id)" />
+
+    <arg name="use_socketcan" value="$(var use_socketcan)" />
+    <arg name="socketcan_device" value="$(var socketcan_device)" />
+  </include>
+
+  <group>
+    <push-ros-namespace namespace="$(var frame_id)" />
+    <node pkg="radar_visualizer" exec="radar_visualizer_node" name="radar_visualizer_node" output="screen">
+      <param name="marker_duration" value="$(var marker_duration)"/>
+      <param name="marker_duration_velocity" value="$(var marker_duration_velocity)"/>
+    </node>
+  </group>
+
+  <node pkg="rviz2" exec="rviz2" name="rviz2" args="-d $(find-pkg-share radar_visualizer)/config/config.rviz" output="screen">
+    <param name="marker_duration" value="$(var marker_duration)"/>
+    <param name="marker_duration_velocity" value="$(var marker_duration_velocity)"/>
+  </node>
+</launch>
