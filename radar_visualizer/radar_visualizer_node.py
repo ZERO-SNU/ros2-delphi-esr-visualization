@@ -35,13 +35,13 @@ class RadarVisualizer(Node):
 
             # Marker with speed infomation
             if "m/s" in marker.text or marker.color.r == 0.0:
-                new_marker.lifetime.sec = (self.marker_duration_velocity // 1)
-                new_marker.lifetime.nanosec = (self.marker_duration_velocity % 1) * int(1e9)
+                new_marker.lifetime.sec = int(self.marker_duration_velocity // 1)
+                new_marker.lifetime.nanosec = int((self.marker_duration_velocity % 1) * 1e9)
                 
                 self.get_logger().info(f"ID: {marker.id}, Speed: {marker.text}")
             else:
-                new_marker.lifetime.sec = (self.marker_duration // 1)
-                new_marker.lifetime.nanosec = (self.marker_duration % 1) * int(1e9)
+                new_marker.lifetime.sec = int(self.marker_duration // 1)
+                new_marker.lifetime.nanosec = int((self.marker_duration % 1) * 1e9)
 #         
             extended_markers.markers.append(new_marker)
 
