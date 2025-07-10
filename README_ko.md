@@ -2,9 +2,9 @@
 * [English](README.md)
 * [한국어(Korean)](README_ko.md)
 
-* 작업 환경
-  * Ubuntu 20.04, ROS 2 Foxy
-  * Ubuntu 22.04, ROS 2 Humble
+### 작업 환경
+* Ubuntu 20.04, ROS 2 Foxy
+* Ubuntu 22.04, ROS 2 Humble
 
 ### 1. 의존성 설치
 ```bash

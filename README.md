@@ -2,9 +2,9 @@
 * [English](README.md)
 * [한국어(Korean)](README_ko.md)
 
-* Working environment:
-  * Ubuntu 20.04 & ROS 2 Foxy
-  * Ubuntu 22.04 & ROS 2 Humble
+### Working environment:
+* Ubuntu 20.04 & ROS 2 Foxy
+* Ubuntu 22.04 & ROS 2 Humble
 
 ### 1. Install Dependencies
 ```bash
