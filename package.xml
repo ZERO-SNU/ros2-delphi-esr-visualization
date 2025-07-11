@@ -5,7 +5,7 @@
   <version>0.0.1</version>
   <description>Driver codes for visualization of objects from the Delphi ESR 2.5 RADAR</description>
   <maintainer email="depth221@gmail.com">Hwang Dongha</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT Licence</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
