@@ -18,10 +18,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='user',
-    maintainer_email='junha308@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Hwang Dongha',
+    maintainer_email='depth221@gmail.com',
+    description='Driver codes for visualization of objects from the Delphi ESR 2.5 RADAR',
+    license='MIT Licence',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
